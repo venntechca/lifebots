@@ -31,6 +31,18 @@ BOT_NAME is the name of your bot, their legacy/login name, NOT their display nam
 
 SECRET is the secret password you set in your bot's web config.
 
+## Usage
+```php
+$name = LifeBots::key2name($uuid);
+$key = LifeBots::name2key($name);
+$displayName = LifeBots::displayname($uuid);
+$botBalance = LifeBots::getBotBalance();
+$avatarPic = LifeBots::getAvatarPic($uuid);
+```
+getAvatarPic() returns the UUID of the texture in the avatar's profile picture.
+
+More features will come in a future update.
+
 ## Credits
 
 - NealB for making LifeBots for Second Life
