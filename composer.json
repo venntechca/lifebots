@@ -1,0 +1,24 @@
+{
+    "name": "venntech/lifebots",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LifeBots\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LifeBots\\LifeBotsServiceProvider"
+            ],
+            "aliases": {
+                "LifeBots": "LifeBots\\Facade\\LifeBots"
+            }
+        }
+    },
+    "minimum-stability": "stable"
+}
