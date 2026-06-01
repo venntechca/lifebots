@@ -11,10 +11,7 @@ class LifeBotsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/lifebots.php', 'lifebots');
 
         $this->app->singleton(LifeBots::class, function ($app) {
-            return new LifeBots(
-                config('lifebots.api_key'),
-                config('lifebots.base_url')
-            );
+            return new LifeBots();
         });
     }
 
@@ -22,6 +19,6 @@ class LifeBotsServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/lifebots.php' => config_path('lifebots.php'),
-        ], 'lifebots-config');
+        ], 'lifebots');
     }
 }
