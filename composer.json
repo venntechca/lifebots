@@ -1,5 +1,5 @@
 {
-    "name": "venntech/lifebots",
+    "name": "venntechca/lifebots",
     "type": "library",
     "require": {
         "guzzlehttp/guzzle": "^7.0"

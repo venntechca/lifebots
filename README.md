@@ -10,5 +10,5 @@ Provides a clean API client, optional Facade, and full Laravel auto‑discovery 
 Install via Composer:
 
 ```bash
-composer require lifebots/lifebots-laravel
+composer require venntechca/lifebots
 ```
