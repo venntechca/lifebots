@@ -17,6 +17,7 @@ class LifeBots
         $data['botname'] = config('lifebots.botname');
         $data['secret'] = config('lifebots.secret');
         $data['action'] = $action;
+        $data['dataType'] = 'json';
         $response = Http::acceptJson()->post("https://api.lifebots.cloud/api/bot.html", $data);
         if ($response->ok()) {
             $body = $response->body();
