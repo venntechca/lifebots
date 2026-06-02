@@ -33,13 +33,16 @@ SECRET is the secret password you set in your bot's web config.
 
 ## Usage
 ```php
-$name = LifeBots::key2name($uuid);
-$key = LifeBots::name2key($name);
-$displayName = LifeBots::displayname($uuid);
-$botBalance = LifeBots::getBotBalance();
-$avatarPic = LifeBots::getAvatarPic($uuid);
+$name = LifeBots::key2name($uuid); // returns Error if failed
+$key = LifeBots::name2key($name); // returns nullkey if failed
+$displayName = LifeBots::displayname($uuid); // returns Error if failed
+$botBalance = LifeBots::getBotBalance(); // returns a zero if failed
+$avatarPic = LifeBots::getAvatarPic($uuid); // returns a nullkey if failed
+LifeBots::sendim($legacyname, $message); // returns true if sent, false otherwise
+LifeBots::sendchanmsg($channel, $message); // same as this one
 ```
 getAvatarPic() returns the UUID of the texture in the avatar's profile picture.
+Please use a processor to get the texture from SL to display on a web page
 
 More features will come in a future update.
 
@@ -48,4 +51,4 @@ More features will come in a future update.
 - NealB for making LifeBots for Second Life
 - Venkellie for making this package to work with LifeBots.
 
-Last Update: June 1 2026 (0.0.2)
+Last Update: June 2 2026 (1.0.3)
