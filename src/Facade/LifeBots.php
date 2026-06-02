@@ -1,6 +1,6 @@
 <?php
 
-namespace LifeBots\Facades;
+namespace LifeBots\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
