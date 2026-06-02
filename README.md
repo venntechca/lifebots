@@ -51,4 +51,4 @@ More features will come in a future update.
 - NealB for making LifeBots for Second Life
 - Venkellie for making this package to work with LifeBots.
 
-Last Update: June 2 2026 (1.0.3)
+Last Update: June 2 2026 (1.0.2)
