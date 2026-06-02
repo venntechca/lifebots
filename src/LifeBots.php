@@ -3,7 +3,8 @@
 namespace LifeBots;
 
 use Illuminate\Support\Facades\Http;
-
+use Str;
+use Log;
 class LifeBots
 {
 
@@ -15,11 +16,19 @@ class LifeBots
         $data['botname'] = config('lifebots.botname');
         $data['secret'] = config('lifebots.secret');
         $data['action'] = $action;
-        $response = Http::post("https://api.lifebots.cloud/api/bot.html", $data);
+        $response = Http::acceptJson()->post("https://api.lifebots.cloud/api/bot.html", $data);
         if ($response->ok()) {
-            $api = $response->json();
-            if (array_key_exists('result', $api) && $api['result'] == "OK") {
+            $body = $response->body();
+            $api = [];
+            if (Str::isJson($body)) {
+                $api = $response->json();
+            }else{
+                parse_str($body, $api);
+            }
+            if (array_key_exists("result", $api) && $api['result'] == "OK") {
                 return $api;
+            }else{
+                return ["error" => $api];
             }
         }
         return ['error' => 'Unable to connect'];
