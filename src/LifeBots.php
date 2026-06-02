@@ -7,6 +7,7 @@ use Str;
 use Log;
 class LifeBots
 {
+    public $NULL_KEY = "00000000-0000-0000-0000-000000000000";
 
     public function __construct() {}
 
@@ -38,7 +39,7 @@ class LifeBots
     {
         $api = $this->request('name2key', ['name' => $name]);
         if (array_key_exists('error', $api)) {
-            return "";
+            return $this->$NULL_KEY;
         }
         return $api['key'];
     }
@@ -47,7 +48,7 @@ class LifeBots
     {
         $api = $this->request('key2name', ['key' => $uuid]);
         if (array_key_exists('error', $api)) {
-            return "";
+            return "Error";
         }
         return $api['name'];
     }
@@ -56,7 +57,7 @@ class LifeBots
     {
         $api = $this->request('getDisplayName', ['uuid' => $uuid]);
         if (array_key_exists('error', $api)) {
-            return "";
+            return "Error";
         }
         return $api['displayName'];
     }
@@ -65,7 +66,7 @@ class LifeBots
     {
         $api = $this->request('get_balance', []);
         if (array_key_exists('error', $api)) {
-            return "";
+            return 0;
         }
         return $api['balance'];
     }
@@ -74,8 +75,22 @@ class LifeBots
     {
         $api = $this->request('avatar_info', ['avatar' => $uuid]);
         if (array_key_exists('error', $api)) {
-            return "";
+            return $this->$NULL_KEY;
         }
         return $api['image'];
+    }
+    public function sendim(string $user, string $msg) {
+        $api = $this->request('im', ['slname' => $user, 'message' => $msg]);
+        if (array_key_exists('error', $api)) {
+            return false;
+        }
+        return true;
+    }
+    public function sendchanmsg(integer $chan, string $msg) {
+        $api = $this->request('say_chat_channel', ['channel' => $chan, 'message' => $msg]);
+        if (array_key_exists('error', $api)) {
+            return false;
+        }
+        return true;
     }
 }
