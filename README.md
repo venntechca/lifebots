@@ -40,6 +40,8 @@ $botBalance = LifeBots::getBotBalance(); // returns a zero if failed
 $avatarPic = LifeBots::getAvatarPic($uuid); // returns a nullkey if failed
 LifeBots::sendim($legacyname, $message); // returns true if sent, false otherwise
 LifeBots::sendchanmsg($channel, $message); // same as this one
+LifeBots::groupinvite(string $user, string $group, string $role, integer $check = 1); // returns true|false
+LifeBots::groupeject(string $user, string $group); // returns true|false
 ```
 getAvatarPic() returns the UUID of the texture in the avatar's profile picture.
 Please use a processor to get the texture from SL to display on a web page
@@ -51,4 +53,19 @@ More features will come in a future update.
 - NealB for making LifeBots for Second Life
 - Venkellie for making this package to work with LifeBots.
 
-Last Update: June 2 2026 (1.0.2a)
+Last Update: June 3 2026 (1.0.3)
+
+## CHANGE LOGS
+
+### 1.0.3 June 3 2026
+- Added groupinvite and groupeject
+- Started recording these change logs
+
+### 1.0.2a June 2 2026
+- fix a issue where the endpoint was returning a query string instead of json
+
+### 1.0.2 June 2 2026
+- added sendim and sendchanmsg
+
+### 1.0.1 June 1 2026
+- inital release with some basic functions.
