@@ -53,19 +53,6 @@ More features will come in a future update.
 - NealB for making LifeBots for Second Life
 - Venkellie for making this package to work with LifeBots.
 
-Last Update: June 3 2026 (1.0.3)
+Last Update: June 5 2026 (1.0.4)
 
-## CHANGE LOGS
-
-### 1.0.3 June 3 2026
-- Added groupinvite and groupeject
-- Started recording these change logs
-
-### 1.0.2a June 2 2026
-- fix a issue where the endpoint was returning a query string instead of json
-
-### 1.0.2 June 2 2026
-- added sendim and sendchanmsg
-
-### 1.0.1 June 1 2026
-- inital release with some basic functions.
+Change logs moved to CHANGELOG.md
